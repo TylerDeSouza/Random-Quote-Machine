@@ -5,19 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Random Quote Generator</title>
-
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
   </head>
 <!-- Page layout-->
   <body>
-    <div class="container">
-      <h1 id="quote-title">Quote title goes here</h1>
-      <p id="quote-content">Quote content goes here</p>
-      <p id="quote-source">Quote source goes here</p>
-    <button type="button" class="btn btn-primary" id="get-another-quote-button">Click Here to get a new quote!</button>
-
+    <div class="well container text-center">
+      <div>
+      <h1 id="quote-title" class="heading">Welcome to my Random Quote Generator!</h1>
+      <br>
+      <p id="quote-content" class="text-center"></p>
+      <p id="quote-source" class="text-center"></p>
+      </div>
+      <br>
+    <button class="btn" id="get-another-quote-button">Click here to get a new quote</button>
+    <button class="btn" id="tweetButton">Click here to tweet quote</button>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -39,7 +43,15 @@
         var post = data.shift(); // The data is an array of posts. Grab the first one.
         $('#quote-title').text(post.title);
         $('#quote-content').html(post.content);
+        $('#tweetButton').on("click", function () {
+         var textToTweet = $('#quote-content').html(post.content);
+           if (textToTweet.length > 140) {
+             alert("Over Twitter character capacity!")
+           }
+         var twtLink = 'https://twitter.com/home?status=' +encodeURIComponent(textToTweet);
+         window.open(twtLink,'_blank');
 
+         });
         // If the Source is available, use it. Otherwise hide it.
         if (typeof post.custom_meta !== 'undefined' && typeof post.custom_meta.Source !== 'undefined') {
           $('#quote-source').html('Source:' + post.custom_meta.Source);
@@ -50,6 +62,8 @@
       cache: false
     });
   });
+
       </script>
+<script></script>
   </body>
 </html>

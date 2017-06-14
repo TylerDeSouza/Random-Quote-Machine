@@ -1,0 +1,22 @@
+.well{
+margin-top: 200px;
+padding-left: 30px;
+padding-right: 30px;
+padding-bottom: 30px;
+background: #18121E !important;
+border-color: #18121E !important;
+}
+h1{
+  color: #984b43 !important;
+}
+p{
+  color: #984b43 !important;
+
+}
+.btn{
+  background-color: #984b43 !important;
+  border-color:  #984b43 !important;
+}
+body{
+  background-color: #233237 !important;
+}
