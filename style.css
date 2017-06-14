@@ -1,14 +1,16 @@
 .well{
-margin-top: 200px;
+margin-top: 180px;
 padding-left: 30px;
 padding-right: 30px;
 padding-bottom: 30px;
+border-radius: 30px !important;
 background: #18121E !important;
 border-color: #18121E !important;
 }
 h1{
   color: #984b43 !important;
   font-family: Roboto !important;
+  font-weight: bold !important;
 }
 p{
   color: #984b43 !important;
